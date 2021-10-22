@@ -16,12 +16,12 @@ model = Model(GLPK.Optimizer)
 @variable(model, x ≥ 0)
 @variable(model, 0 ≤ y ≤ 3)
 
-## ADD OBJECTIVE FUNCTION
-@objective(model, Min, 12x + 20y)
-
 ## ADD CONSTRAINTS
 @constraint(model, c1, 6x + 8y ≥ 100)
 @constraint(model, c2, 7x + 12y ≥ 120)
+
+## ADD OBJECTIVE FUNCTION
+@objective(model, Min, 12x + 20y)
 
 ## SHOW MODEL
 print(model)
